@@ -35,7 +35,7 @@ void sphere()
 
 	//1st pole – use triangle fans
 	glBegin(GL_TRIANGLE_FAN);
-	glColor3f(1.0, 0.0, 0.0); // both triangle colors are affected by this
+	glColor3f(0.0, 1.0, 0.0); // both triangle colors are affected by this
 	glVertex3d(0.0, 0.0, 1.0);   // top pole
 	c80 = c * 80.0;
 	z = sin(c80);
@@ -48,6 +48,8 @@ void sphere()
 	}
 	glEnd();
 	//2nd pole – use triangle fans
+	glColor3f(1.0, 0.0, 0.0); // both triangle colors are affected by this
+
 	glBegin(GL_TRIANGLE_FAN);
 	glVertex3d(0.0, 0.0, -1.0); // bottom pole
 	z = -sin(c80);
@@ -65,11 +67,12 @@ void display()
 {
 	int j;
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); // the quad doesn't get filled up and only boundary appears
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	glTranslatef(0.0, 0.0, -1);
+	glTranslatef(0.0, 0.0,-1.0);
 	// change the below parameter to control the viewing angle
 	glRotatef(60.0, 1.0, 1.0, 0.0); // rotate by how much angle and about which axis (angle,x,y,z)
 
@@ -89,6 +92,7 @@ int main(int argc, char* argv[])
 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
+
 	glutInitWindowSize(500, 500);
 	glutInitWindowPosition(100, 100);
 	glutCreateWindow("Sphere Display");

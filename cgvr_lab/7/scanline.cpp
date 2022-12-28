@@ -1,8 +1,9 @@
 #include <stdlib.h>
 #include <algorithm>
 #include <iostream>
-#include <windows.h>
-#include <gl/glut.h>
+// #include <windows.h>
+#include<unistd.h>
+#include <GL/glut.h>
 
 int m, n;
 int wx = 500, wy = 500;
@@ -11,7 +12,7 @@ float x[100], y[100];
 
 void drawLine(float x1, float y1, float x2, float y2)
 {
-	Sleep(1000);
+	sleep(1000);
 	glColor3f(0, 0, 1);
 	glBegin(GL_LINES);
 	glVertex2f(x1, y1);

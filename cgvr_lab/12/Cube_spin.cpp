@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <GL/glut.h>
-#include<gl\GL.h>
-#include<gl\GLU.h>
-#include <time.h>
+// #include<gl\GL.h>
+// #include<gl\GLU.h>
+// #include <time.h>
 
 
 	GLfloat vertices[] = {
@@ -37,8 +37,9 @@ static GLint axis = 2;
 
 void delay(float secs)
 {
-	float end = clock()/CLOCKS_PER_SEC + secs;
-	while((clock()/CLOCKS_PER_SEC) < end);
+	// float end = clock()/CLOCKS_PER_SEC + secs;
+	// while((clock()/CLOCKS_PER_SEC) < end);
+	for(int i=0; i<50000000;i++);
 }
 
 void displaySingle(void)
@@ -121,7 +122,7 @@ void myReshape(int w, int h)
     glMatrixMode(GL_MODELVIEW);
 }
 
-void
+int
 main(int argc, char **argv)
 {
 

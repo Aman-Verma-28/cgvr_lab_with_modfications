@@ -1,19 +1,17 @@
+		##### Prog 8 - Cohen Sutherland Line Clipping ######
+
 #include<stdio.h>
 #include<stdlib.h>
-#include<gl/glut.h>
-
+#include<GL/glut.h>
 #define outcode int
 #define true 1
 #define false 0
-
 double xmin=50,ymin=50,xmax=100,ymax=100;
 double xvmin=200,yvmin=200,xvmax=300,yvmax=300;
-
 const int RIGHT=4;
 const int LEFT=8;
 const int TOP=1;
 const int BOTTOM=2;
-
 outcode computeoutcode(double x,double y)
 {
 	outcode code=0;
@@ -28,7 +26,6 @@ outcode computeoutcode(double x,double y)
 	
 	return code;
 }
-
 void cohensuther(double x0,double y0,double x1,double y1)
 {
 	outcode outcode0,outcode1,outcodeout;
@@ -49,7 +46,7 @@ void cohensuther(double x0,double y0,double x1,double y1)
 		else
 		{
 			double x,y;
-			outcodeout=outcode0?outcode0:outcode1;
+			outcodeout = outcode0 ? outcode0:outcode1;
 			if(outcodeout & TOP)
 			{
 				x=x0+(x1-x0)*(ymax-y0)/(y1-y0);
@@ -111,7 +108,6 @@ void cohensuther(double x0,double y0,double x1,double y1)
 			glEnd();
 	}
 }
-
 void display()
 {
 	double x0=120,y0=10,x1=40,y1=130;
@@ -146,8 +142,7 @@ void myinit()
 	glLoadIdentity();
 	gluOrtho2D(0,500,0,500);
 }
-
- void main(int argc,char **argv)
+ int main(int argc,char **argv)
 	{
 	glutInit(&argc,argv);
 	glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);

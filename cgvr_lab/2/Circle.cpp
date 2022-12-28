@@ -1,14 +1,12 @@
+			###### PROG 2 - Circle #####
 #include <GL/glut.h>
 #include <iostream>
 #include <math.h>
-
 #define WINDOW_WIDTH 500
 #define WINDOW_HEIGHT 500
-
 int xc, yc, r;
 int p1_x, p2_x, p1_y, p2_y;
 int point1_done = 0;
-
 void draw_circle(int xc, int yc, int x, int y)
 {
 	glBegin(GL_POINTS);
@@ -22,7 +20,6 @@ void draw_circle(int xc, int yc, int x, int y)
 	glVertex2i(xc - y, yc - x);
 	glEnd();
 }
-
 void circleBres()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -64,9 +61,7 @@ void mouseFuncCircle(int button, int state, int x, int y)
 		point1_done = 0;
 	}
 }
-
 void drawingCircle(){}
-
 void myInit()
 {
 	glClearColor(0, 0, 0, 1);
@@ -74,7 +69,6 @@ void myInit()
 	glPointSize(3.0);
 	gluOrtho2D(-250, 250, -250, 250);
 }
-
 int main(int argc, char** argv)
 {
 	int choice;

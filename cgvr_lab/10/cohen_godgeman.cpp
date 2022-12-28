@@ -1,5 +1,6 @@
-#include <windows.h>
-#include <gl/glut.h>
+            ####  PROG 10 - Polygon CLipping #####
+// #include <windows.h>
+#include <GL/glut.h>
 
 struct Point{
     float x,y;
